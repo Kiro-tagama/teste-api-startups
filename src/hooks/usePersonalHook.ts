@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { generateStartupIdea, validateApiKey } from "../api/openIaApi";
 
 const envApiKey = import.meta.env.VITE_API_KEY ?? "";
@@ -14,7 +14,16 @@ export function usePersonalHook(){
 
   const [messages,setMessages] = useState<MessageProps[]|[]>([]);
 
-  async function getStatusValidateApi () {setValidApiKey(await validateApiKey(apiKey))}
+  const isValidating = useRef(false);
+  async function getStatusValidateApi () {
+    if (isValidating.current) return;
+    isValidating.current = true;
+
+    const isValid = await validateApiKey(apiKey);
+    setValidApiKey(isValid);
+
+    isValidating.current = false;
+  }
   useEffect(()=>{
     getStatusValidateApi()
   },[apiKey])

@@ -14,7 +14,8 @@ export function MessagesArea({messages}:MessagesAreaProps) {
           style={{
             marginLeft: data.id == "user" ? "auto":0,
             marginRight: data.id == "bot" ? "auto":0,
-            textAlign: "left"
+            textAlign: "left",
+            maxWidth: "90%"
           }}
           > 
             {data.id == "bot" ? <><span>bot:</span><br /></> : null}
