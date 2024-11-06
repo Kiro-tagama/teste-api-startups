@@ -20,13 +20,21 @@ export function usePersonalHook(){
   },[apiKey])
   
   function sendMessage(message:string) {
-    setMessages([...messages, {id:"user", message:message}])
+    if (message.length == 0) return; 
 
-    generateStartupIdea(apiKey,message)
-      .then(idea =>{
-        setMessages([...messages, {id:"bot", message:idea}])
-      })
-      .catch(error => console.error("Erro:", error)); 
+    setMessages((prevMessages) => [
+      ...prevMessages,
+      { id: "user", message: message },
+    ]);
+
+    generateStartupIdea(apiKey, message)
+    .then((idea) => {
+      setMessages((prevMessages) => [
+        ...prevMessages,
+        { id: "bot", message: idea },
+      ]);
+    })
+    .catch((error) => console.error("Erro:", error));
   }
 
   return{
