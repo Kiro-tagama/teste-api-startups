@@ -5,12 +5,13 @@ interface MessagesAreaProps {
 }
 
 export function MessagesArea({messages}:MessagesAreaProps) {
+  console.log(messages);
   return (
     <div className="messagesArea">
       {messages.length == 0 ?
         <div>Nenhuma ideia encontrada.</div>
         :messages.map((data, index) => (
-          <div key={index} className={`message`}
+          <div key={index} className={`message ${data.id}`}
           style={{
             marginLeft: data.id == "user" ? "auto":0,
             marginRight: data.id == "bot" ? "auto":0,

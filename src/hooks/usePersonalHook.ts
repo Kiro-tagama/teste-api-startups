@@ -29,7 +29,7 @@ export function usePersonalHook(){
   },[apiKey])
   
   function sendMessage(message:string) {
-    if (message.length == 0) return; 
+    if (message.length == 0 && validApiKey == true) return; 
 
     setMessages((prevMessages) => [
       ...prevMessages,

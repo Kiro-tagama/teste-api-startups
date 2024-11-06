@@ -56,17 +56,20 @@
   gap: .5em;
 }
 
-.messagesArea{
+.messagesArea {
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
   gap: .5em;
-  overflow-y:auto;
   min-height: 150px;
   max-height: 50vh;
+  height: auto;
+  overflow-y: scroll;
+  padding: 20px;
 }
+
 .message p{
   margin: 0;
   background-color: #88888823;
