@@ -1,50 +1,35 @@
-# React + TypeScript + Vite
+# Teste Api Startups
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+criado com TypeScript e React para interface
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+execute com 
+```bash
+  npm run dev
 ```
+coloque sua chave api logo abaixo do titulo e terá um identificador de chave valida ao lado
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+![alt text](/src/assets/interface.png)
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+com sua chave válida, só encaminha a mensagem
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+---
+
+encontrará o codigo de requisição na pasta `src/api/openaiApi.ts`
+
+a requisição feita é um post para 
+`https://api.openai.com/v1/chat/completions`
+
+
+usando o modelo `gpt-3.5-turbo` que é recomendada para chats na documentação
+
+e logo abaixo em mensagens temos a definição do sistema sendo ele um assistente para gerar ideias de startup e logo abaixo a mensagem passada pelo usuario (nós) a mensagem é representada pela variavel `userPropt`
+
+![alt text](/src/assets/generateStartupIdea.png)
+
+testando o chat ele deve oferecer suas repostas com base na pergunta feita e levando em consideração o prompt passado 
+(dependendo da pergunta mesmo que igual ele pode ter respostas distintas)
+![alt text](/src/assets/interfaceWithResponse.png)
+
+---
+
+obs: não vejo relevancia em estender a documentação pois o resto do codigo se trata de validações e interface e o objetivo é o consumo da api de ia

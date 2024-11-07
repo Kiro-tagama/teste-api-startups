@@ -12,8 +12,6 @@ export async function generateStartupIdea(apiKey: string, userPrompt: string) {
           { role: "system", content: "Você é um assistente que gera ideias de startups inovadoras." },
           { role: "user", content: userPrompt }
         ],
-        max_tokens: 100,
-        temperature: 0.7
       })
     });
 
@@ -29,6 +27,7 @@ export async function generateStartupIdea(apiKey: string, userPrompt: string) {
     }
 
     const data = await response.json();
+    console.log("Ideia gerada:");
     return data.choices[0].message.content;
 
   } catch (error) {

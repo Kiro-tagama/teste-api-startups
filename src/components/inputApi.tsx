@@ -20,6 +20,7 @@ export function InputApi(props: InputApiProps){
         style={{
           borderColor: validApiKey? 'green' :'red',
           color: validApiKey? 'green' :'red',
+          cursor: 'unset'
         }}
         >{validApiKey?'Válido':'Inválida'}</button>
       }

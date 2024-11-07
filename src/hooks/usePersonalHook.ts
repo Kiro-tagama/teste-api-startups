@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { generateStartupIdea, validateApiKey } from "../api/openIaApi";
+import { generateStartupIdea, validateApiKey } from "../api/openaiApi";
 
 const envApiKey = import.meta.env.VITE_API_KEY ?? "";
 

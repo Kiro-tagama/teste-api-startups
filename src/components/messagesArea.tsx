@@ -5,11 +5,10 @@ interface MessagesAreaProps {
 }
 
 export function MessagesArea({messages}:MessagesAreaProps) {
-  console.log(messages);
   return (
     <div className="messagesArea">
       {messages.length == 0 ?
-        <div>Nenhuma ideia encontrada.</div>
+        <div style={{margin:"auto"}}>Nenhuma ideia encontrada. <br />Inicie a conversa digitando logo abaixo</div>
         :messages.map((data, index) => (
           <div key={index} className={`message ${data.id}`}
           style={{

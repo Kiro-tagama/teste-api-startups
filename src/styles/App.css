@@ -66,7 +66,7 @@
   min-height: 150px;
   max-height: 50vh;
   height: auto;
-  overflow-y: scroll;
+  overflow-y: auto;
   padding: 20px;
 }
 
