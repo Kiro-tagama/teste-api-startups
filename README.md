@@ -38,3 +38,5 @@ testando o chat ele deve oferecer suas respostas com base na pergunta feita e le
 obs: não vejo relevância em estender a documentação pois o resto do código se trata de validações e interface e o objetivo é o consumo da api de ia
 
 ![video](/src/assets/video.mp4)
+
+youtube: https://youtu.be/rj7dEaPPq8c
